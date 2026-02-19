@@ -174,35 +174,6 @@
     <div><span>[CHAMBER]</span> B-2, RHC JAIPUR</div>
 </div>
 
-<script>
-function deployVCard() {
-const vcard = 
-`BEGIN:VCARD
-VERSION:3.0
-N:Mathur;Tanmay;;Adv.;
-FN:Adv. Tanmay Mathur
-ORG:Independent Legal Practice
-TITLE:Advocate | Rajasthan High Court
-TEL;TYPE=WORK,VOICE:+916377188051
-EMAIL;TYPE=WORK:advtanmaymathur@gmail.com
-ADR;TYPE=WORK:;;A-4, Vivek Vihar, JLN Marg;Jaipur;Rajasthan;;India
-ADR;TYPE=POSTAL:;;Chamber B-2, Rajasthan High Court;Jaipur;Rajasthan;;India
-END:VCARD`;
-
-    const blob = new Blob([vcard], { type: 'text/vcard' });
-    const url = URL.createObjectURL(blob);
-    
-    const a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    a.download = 'Adv_Tanmay_Mathur.vcf';
-    document.body.appendChild(a);
-    a.click();
-    
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
-}
-</script>
             <div class="ticker-wrap">
                 <div class="ticker">
                     SYSTEM STATUS: GENESIS SOVEREIGN NEURAL STACK [ACTIVE] // NEDAL PROTOCOL [ENGAGED] // INTERFERENCE [ZERO] // WAITING FOR RISC-V HARDWARE //
