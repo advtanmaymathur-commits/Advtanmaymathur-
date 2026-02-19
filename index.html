@@ -159,18 +159,54 @@
     <div class="hud-container">
         <div class="content">
             <h1>Adv. Tanmay Mathur</h1>
-            <div class="subtitle">SOVEREIGN LEGAL ARCHITECT | RAJASTHAN HC</div>
+            <div class="subtitle">RAJASTHAN HC</div>
             <div class="classification">CLASSIFICATION: INDEPENDENT NODE</div>
 
             <div class="divider">/\/\/\/\/\/\</div>
 
-            <a href="tel:+916377188051" class="tactical-btn">[ INITIATE COMMS ]</a>
-            <a href="mailto:advtanmaymathur@gmail.com" class="tactical-btn">[ TRANSMIT DOSSIER ]</a>
-            <a href="https://wa.me/916377188051" class="tactical-btn alert">[ ESTABLISH SECURE LINK ]</a>
+            <a href="tel:+916377188051" class="tactical-btn">[ CALL ]</a>
+<a href="mailto:advtanmaymathur@gmail.com" class="tactical-btn">[ EMAIL ]</a>
+<a href="https://wa.me/916377188051" class="tactical-btn alert">[ WHATSAPP ]</a>
+<a href="#" onclick="deployVCard(); return false;" class="tactical-btn">[ TRANSMIT DOSSIER (vCard) ]</a>
+
+<div class="base-nodes">
+    <div><span>[OFFICE]</span> A-4, Vivek Vihar, JLN Marg, Jaipur</div>
+    <div><span>[CHAMBER]</span> B-2, RHC JAIPUR</div>
+</div>
+
+<script>
+function deployVCard() {
+const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:Mathur;Tanmay;;Adv.;
+FN:Adv. Tanmay Mathur
+ORG:Independent Legal Practice
+TITLE:Advocate | Rajasthan High Court
+TEL;TYPE=WORK,VOICE:+916377188051
+EMAIL;TYPE=WORK:advtanmaymathur@gmail.com
+ADR;TYPE=WORK:;;A-4, Vivek Vihar, JLN Marg;Jaipur;Rajasthan;;India
+ADR;TYPE=POSTAL:;;Chamber B-2, Rajasthan High Court;Jaipur;Rajasthan;;India
+END:VCARD`;
+
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = 'Adv_Tanmay_Mathur.vcf';
+    document.body.appendChild(a);
+    a.click();
+    
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+}
+</script>
 
             <div class="base-nodes">
-                <div><span>[BASE 01]</span> A-4, Vivek Vihar, JLN Marg, Jaipur</div>
-                <div><span>[BASE 02]</span> KV No. 1, Delhi Cantonment</div>
+                <div><span>[OFFICE]</span> A-4, Vivek Vihar, JLN Marg, Jaipur</div>
+                <div><span>[CHAMBER]</span> B-2, RHC JAIPUR</div>
             </div>
 
             <div class="ticker-wrap">
@@ -180,6 +216,37 @@
             </div>
         </div>
     </div>
+<script>
+function deployVCard() {
+    // The Tactical vCard Payload
+    const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:Mathur;Tanmay;;Adv.;
+FN:Adv. Tanmay Mathur
+TITLE:Advocate | Rajasthan High Court
+TEL;TYPE=WORK,VOICE:+916377188051
+ADR;TYPE=WORK:;;A-4, Vivek Vihar, JLN Marg;Jaipur;Rajasthan;;India
+ADR;TYPE=HOME:;;KV No. 1;Delhi Cantonment;New Delhi;;India
+END:VCARD`;
+
+    // Convert to a downloadable Blob
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = URL.createObjectURL(blob);
+    
+    // Stealth trigger the download
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = 'Adv_Tanmay_Mathur.vcf';
+    document.body.appendChild(a);
+    a.click();
+    
+    // Clean up the node
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+}
+</script>
 
 </body>
 </html>
