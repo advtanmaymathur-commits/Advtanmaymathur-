@@ -167,6 +167,8 @@
             <a href="tel:+916377188051" class="tactical-btn">[ CALL ]</a>
 <a href="mailto:advtanmaymathur@gmail.com" class="tactical-btn">[ EMAIL ]</a>
 <a href="https://wa.me/916377188051" class="tactical-btn alert">[ WHATSAPP ]</a>
+            <a href="#" id="tactical-pay-btn" class="tactical-btn alert" style="display: none;">[ CLEAR INVOICE ]</a>
+        
 <a href="#" onclick="deployVCard(); return false;" class="tactical-btn">[ TRANSMIT DOSSIER (vCard) ]</a>
 
 <div class="base-nodes">
@@ -184,6 +186,21 @@
         </div>
     </div>
 <script>
+    window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const amount = urlParams.get('amt');
+    
+    if (amount && !isNaN(amount)) {
+        const payBtn = document.getElementById('tactical-pay-btn');
+        // APNI ASLI UPI ID YAHAN DAALEIN (Quotes ke andar)
+        const upiId = "advtanmaymathur-1@oksbi"; 
+        
+        payBtn.style.display = "block";
+        payBtn.textContent = `[ CLEAR INVOICE (₹${amount}) ]`;
+        payBtn.href = `upi://pay?pa=${upiId}&pn=Adv.%20Tanmay%20Mathur&am=${amount}&cu=INR`;
+    }
+};
+    
 function deployVCard() {
     // The Tactical vCard Payload
         const vcard = 
